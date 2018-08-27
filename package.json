@@ -1,5 +1,7 @@
 {
   "name": "Cat-team-X",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
