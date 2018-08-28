@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   validates :description, presence:true, length: {maximum: 100}
 
   # Validates the value of price as only numerical
-  validates :price, presence: true, format: { with: /\A\d+(?:\.\d{2})?\z/ }, numericality: { greater_than: 0, less_than: 1000000 }
+  validates :price, presence: true, numericality: { greater_than: 0, less_than: 1000000 }
 
   # Validates the presences of an image url
   validates :image_url, presence:true
