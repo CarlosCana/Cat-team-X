@@ -5,7 +5,7 @@
             <% @items.each do |item| %>
             <div class="col-md-4">
                 <div class="shop-grid-item">
-                    <div class="shop-item-thumb"><%= link_to item.image_url, "/items/"+item.id.to_s %>
+                    <div class="shop-item-thumb"><%= link_to image_tag(item.image_url), "/items/"+item.id.to_s %>
                         <!-- <div class="shop-item-hidden"><a class="btn btn-new-white" href="#">Add to cart</a></div> -->
                     </div>
                     <div class="shop-item-captions">
