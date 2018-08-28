@@ -127,26 +127,24 @@
         <div class="extra-nav">
             <ul>
               <% if user_signed_in? %>
-                <li>
+                <li id="special-nav">
                   You are connected as <%= current_user.username %>
                 </li>
-                <li>
+                <li id="special-nav">
                   <%= link_to "Edit Account", edit_user_registration_path %>
                 </li>
-                <li>
+                <li id="special-nav">
                   <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
                 </li>
               <% else %>
-                <li>
+                <li id="special-nav">
                   <%= link_to "Sign In", new_user_session_path %>
                 </li>
-                <li>
+                <li id="special-nav">
                   <%= link_to "Sign Up", new_user_registration_path %>
                 </li>
               <% end %>
                 <li><a class="top-bar-cart" href="shop-cart-1.html"><span class="menu-item-span"><i class="ti-shopping-cart"></i><span>3</span></span></a></li>
-                <li><a class="off-canvas-open" href="#"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
-                <li class="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
             </ul>
         </div>
     </div>
