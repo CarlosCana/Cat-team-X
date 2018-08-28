@@ -3,7 +3,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
     create_table :items do |t|
       t.string :title
       t.text :description
-      t.decimal :price
+      # Precision for decimals
+      t.decimal :price, precision: 3, scale: 2
       t.string :image_url
 
       t.timestamps
