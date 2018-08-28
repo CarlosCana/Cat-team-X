@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root 'item#index'
   get 'carts/:id', to: 'carts#show', as: 'cart'
   delete 'carts/:id', to: 'carts#destroy'
 
@@ -12,4 +12,4 @@ Rails.application.routes.draw do
   resources :item
   devise_for :users
   resources :charges
-end
+  end

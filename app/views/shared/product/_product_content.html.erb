@@ -10,7 +10,7 @@
                 <div class="shop-single-item">
                     <h2 class="shop-single-item-title"><%= @items.title %></h2>
                     <div class="shop-single-item-rating"><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span><a href="#">(2 customer reviews)</a></div>
-                    <h2 class="shop-single-item-price">$<%= @items.price %></h2>
+                    <h2 class="shop-single-item-price">$<%= @items.price %> (unit price)</h2>
                     <div class="shop-single-item-description">
                         <p><%= @items.description %></p>
                     </div>
@@ -21,9 +21,10 @@
                         <div class="form-group col-md-6">
                             <select class="form-control">
                                 <option selected="selected">Choose Size</option>
-                                <option>EU 35</option>
-                                <option disabled>EU 36</option>
-                                <option>EU 35</option>
+                                <option>A5</option>
+                                <option disabled>A4</option>
+                                <option>A3</option>
+                                <option>A2</option>
                             </select>
                         </div>
                     </div>
@@ -32,8 +33,8 @@
                     </div>
                     <hr class="m-t-30 m-b-30">
                     <div class="info-list">
-                        <li><span class="info-list-title">Category:</span><span><a href="#">Interior</a></span></li>
-                        <li><span class="info-list-title">Tags:</span><span><a href="#">Chair</a>, <a href="#">Interior</a></span></li>
+                        <li><span class="info-list-title">Category:</span><span><a href="#">Picture</a></span></li>
+                        <li><span class="info-list-title">Tags:</span><span><a href="#">Animal</a>, <a href="#">Cat</a></span></li>
                     </div>
                     <hr class="m-t-30 m-b-30">
                     <div class="info-list">
