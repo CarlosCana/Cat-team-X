@@ -12838,6 +12838,7 @@ img.img-shadow,
 
 .module,
 .module-cover {
+    
     background-position: 50%;
     background-repeat: no-repeat;
     background-color: #fff;
@@ -12860,7 +12861,7 @@ img.img-shadow,
 }
 
 .overlay-background {
-    background: #333;
+    background: black;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -12869,7 +12870,7 @@ img.img-shadow,
 }
 
 .overlay-background.overlay-gradient {
-    background: #505cfd;
+    background: black;
     background: linear-gradient(to left, #00dbde, #505cfd);
 }
 
@@ -12931,8 +12932,9 @@ img.img-shadow,
 }
 
 .module-cover {
+
     position: relative;
-    padding: 240px 0 240px;
+    padding: 200px 0 200px;
 }
 
 .module-cover,
