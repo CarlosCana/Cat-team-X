@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  has_many :cart_items, dependent: :destroy
   # Validates the presences of a title with a minimum lenght of 2 characters
   validates :title, presence:true, length: {minimum: 2}
 

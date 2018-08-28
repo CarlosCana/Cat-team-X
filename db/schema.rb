@@ -10,12 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_125408) do
+ActiveRecord::Schema.define(version: 2018_08_28_155253) do
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "quantity", default: 1
+    t.integer "item_id"
+    t.integer "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.decimal "price"
+    t.decimal "price", precision: 3, scale: 2
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
