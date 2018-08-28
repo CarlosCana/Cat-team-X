@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-7">
                 <div class="shop-single-item-photos">
-                  <a class="shop-single-item-popup" href="assets/images/shop/5.jpg"><%= @items.image_url %></a>
+                  <%= link_to image_tag(@items.image_url), "/items/"+@items.id.to_s, class: "shop-single-item-popup" %>
                 </div>
             </div>
             <div class="col-lg-5">
