@@ -1,35 +1,3 @@
-<div id="form-wrapper-back">
-  <h2>Sign up</h2>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="field">
-      <%= f.label :username, 'username' %><br />
-      <%= f.text_field :username %>
-    </div>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-    <br>
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-  <% end %>
-  <br>
-  <%= render "devise/shared/links" %>
-</div>
-
 <!-- Preloader-->
 <%= render 'shared/preloader' %>
 <!-- Preloader end-->
@@ -40,31 +8,36 @@
 
 <!-- Wrapper-->
 <div class="wrapper">
-    <section class="module-cover parallax fullscreen text-center" data-background="assets/images/module-5.jpg" data-overlay="0.65" data-gradient="">
+  <!-- Form to sign up section -->
+    <section id="global-background">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 m-auto">
                     <div class="m-b-20">
-                        <h6>Create a new account</h6>
+                      <h6>Create a new account</h6>
                     </div>
                     <div class="m-b-20">
-                        <form method="post">
+                          <!-- Sign up form -->
+                          <%= form_for(resource, as: resource_name, url:registration_path(resource_name)) do |f| %>
+                            <%= devise_error_messages! %>
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Name">
+                                <%= f.text_field :username, placeholder:'Name', :class => "form-control" %>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="email" placeholder="E-mail">
+                                <%= f.text_field :email, placeholder:'Email', :class => "form-control"  %>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="password" placeholder="Pasword">
+                                <%= f.password_field :password, placeholder:'Password', autocomplete: "new-password", :class => "form-control" %>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="password" placeholder="Confirm password">
+                                <%= f.password_field :password_confirmation, placeholder: 'Confirm Password (6 characters minimum)', autocomplete: "new-password", :class => "form-control" %>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-block btn-round btn-brand" type="submit">Sign Up</button>
+                                <%= f.submit 'Create User', :class => 'btn btn-block btn-round btn-brand'%>
                             </div>
-                        </form>
+                            <%= render "devise/shared/links" %>
+                            <% end %>
+                            <!-- Sign up form end -->
                     </div>
                     <div class="m-b-20">
                         <p><small>By signing up, you agree to the <a href="#">terms of service</a></small></p>
@@ -73,6 +46,7 @@
             </div>
         </div>
     </section>
+    <!--Form to sign up section end -->
 
     <!-- Footer-->
     <%= render 'shared/footer' %>

@@ -1,4 +1,4 @@
-<div id="form-wrapper-back">
+<!-- <div id="form-wrapper-back">
   <h2>Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -14,7 +14,7 @@
 
     <% if devise_mapping.rememberable? -%>
       <div class="field">
-        <%= f.check_box :remember_me %>
+          <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>
     <% end -%>
@@ -25,7 +25,7 @@
   <% end %>
 
   <%= render "devise/shared/links" %>
-</div>
+</div> -->
 
 <!-- Preloader-->
 <%= render 'shared/preloader' %>
@@ -37,34 +37,43 @@
 
 <!-- Wrapper-->
 <div class="wrapper">
-    <section class="module-cover parallax fullscreen text-center" data-background="assets/images/module-5.jpg" data-overlay="0.65" data-gradient="">
+    <section id="global-background">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 m-auto">
                     <div class="m-b-20">
+                      <h2> Sign in </h2>
                         <h6>Sign into your account</h6>
                     </div>
                     <div class="m-b-20">
-                        <form method="post">
+
+                          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                             <div class="form-group">
-                                <input class="form-control" type="email" placeholder="Email">
+                                <%= f.email_field :email, placeholder:'Email', autofocus: true, autocomplete: "email", :class => 'form-control' %>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="password" placeholder="Pasword">
+                                <%= f.password_field :password, placeholder:'Password', autocomplete: "current-password", :class => 'form-control' %>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-block btn-round btn-brand" type="submit">Login</button>
+                                <%= f.submit 'Log in', :class => 'btn btn-block btn-round btn-brand'%>
                             </div>
-                        </form>
+                            <% if devise_mapping.rememberable? -%>
+                              <div class="field">
+                                <%= f.check_box :remember_me %>
+                                <%= f.label :remember_me %>
+                              </div>
+                            <% end -%>
+                        <% end %>
                     </div>
                     <div class="m-b-20">
                         <p><small>Dont have an account yet? <a href="#">Create account</a> <br>
                                 Forgot your username or password? <a href="#">Recover account</a></small></p>
-                    </div>
+                  </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Footer-->
     <%= render 'shared/footer' %>
