@@ -8,38 +8,32 @@
 
 <!-- Wrapper-->
 <div class="wrapper">
-    <section class="module-cover parallax fullscreen text-center" data-background="assets/images/module-5.jpg" data-overlay="0.65" data-gradient="">
+    <section class="module-cover parallax fullscreen text-center" id="global-background" data-overlay="0.65" data-gradient="">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 m-auto">
                     <div class="m-b-20">
-                        <h6>Sign into your accoun</h6>
-                    </div>
-                    <div class="m-b-20">
-                        <form method="post">
-                            <div class="form-group">
-                                <button class="btn btn-block btn-round btn-brand" type="submit">Login</button>
-                                <%= form_tag charges_path do %>
-                                  <article>
-                                    <% if flash[:error].present? %>
-                                      <div id="error_explanation">
-                                        <p><%= flash[:error] %></p>
-                                      </div>
-                                    <% end %>
-                                    <label class="amount">
-                                      <span>Amount: <%= number_to_currency(@current_cart.sub_total) %></span>
-                                    </label>
-                                  </article>
-
-                                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                                          data-description="Paiement des photos"
-                                          data-amount="<%= number_to_currency(@current_cart.sub_total) %>"
-                                          data-currency="usd"
-                                          data-locale="auto"></script>
+                        <div class="form-group">
+                            <%= form_tag charges_path do %>
+                              <article>
+                                <% if flash[:error].present? %>
+                                  <div id="error_explanation">
+                                    <p><%= flash[:error] %></p>
+                                  </div>
                                 <% end %>
-                            </div>
-                        </form>
+                                <label class="amount">
+                                  <span>Amount: <%= number_to_currency(@current_cart.sub_total) %></span>
+                                </label>
+                              </article>
+
+                              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                      data-description="Paiement des photos"
+                                      data-amount="<%= number_to_currency(@current_cart.sub_total) %>"
+                                      data-currency="usd"
+                                      data-locale="auto"></script>
+                            <% end %>
+                        </div>
                     </div>
                 </div>
             </div>
