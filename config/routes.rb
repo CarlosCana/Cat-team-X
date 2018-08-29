@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  get 'orders/index'
+  get 'orders/show'
+  get 'orders/new'
   root 'item#index'
+
   get 'carts/:id', to: 'carts#show', as: 'cart'
   delete 'carts/:id', to: 'carts#destroy'
 
@@ -10,6 +14,8 @@ Rails.application.routes.draw do
   delete 'cart_items/:id' => "cart_items#destroy"
 
   resources :item
-  devise_for :users
   resources :charges
+  resources :orders
+
+  devise_for :users
   end
