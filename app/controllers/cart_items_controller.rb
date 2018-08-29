@@ -22,8 +22,8 @@ class CartItemsController < ApplicationController
       redirect_to cart_path(current_cart)
     else
       flash[:error] = 'You must be logged-in to shop on our lovely website !'
-      redirect_to new_user_session_path
-    end 
+      redirect_to new_user_registration_path
+    end
   end
 
   def destroy
