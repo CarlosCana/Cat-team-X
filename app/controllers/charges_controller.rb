@@ -23,6 +23,9 @@ class ChargesController < ApplicationController
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
 
+      redirect_to root_path
+      flash[:success] = 'Thank you for your order'
+
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path
