@@ -128,7 +128,7 @@
             <ul>
               <% if user_signed_in? %>
                 <li id="special-nav">
-                  You are connected as <%= current_user.username %>
+                  Connected as <%= current_user.username %>
                 </li>
                 <li id="special-nav">
                   <%= link_to "Edit Account", edit_user_registration_path %>
