@@ -17,4 +17,5 @@
 //= require js/bootstrap/bootstrap.min
 //= require js/custom/plugins.min
 //= require js/custom/custom.min
+//= require stripe_button
 //= require_tree .
