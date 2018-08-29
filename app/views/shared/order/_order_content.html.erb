@@ -1,0 +1,51 @@
+<section class="module">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 m-auto">
+                <div class="heading-underline">
+                    <h5 class="m-b-30">Delivery Details</h5>
+                </div>
+                <%= form_for (@order) do |f| %>
+                    <div class="row form-row">
+                        <div class="col-md-12 form-group">
+                            <%= f.text_field :name, required: true, class: "form-control", placeholder: "Full Name" %>
+                        </div>
+                    </div>
+                    <div class="row form-row">
+                        <div class="col-md-12 form-group">
+                            <%= f.email_field :email, required: true, class: "form-control", placeholder: "Email" %>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <%= f.text_area :address, required: true, class: "form-control", placeholder: "Full Address" %>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+        <div class="row m-t-70">
+            <div class="col-md-8 m-auto">
+                <div class="heading-underline">
+                    <h5 class="m-b-30">Order Summary</h5>
+                </div>
+                <table class="table cart-table">
+                    <tbody>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td class="text-right"><%= number_to_currency(@cart.sub_total) %></td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td class="text-right">$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td class="text-right"><%= number_to_currency(@cart.sub_total) %></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-right"><%= f.submit "Submit Order", class: "btn btn-brand" %></div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</section>

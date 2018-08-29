@@ -5,7 +5,7 @@ end
 class CartItem < ActiveRecord::Base
   belongs_to :item
   belongs_to :cart
-  belongs_to :order
+  belongs_to :order, optional: true
 
   # LOGIC
   def total_price
