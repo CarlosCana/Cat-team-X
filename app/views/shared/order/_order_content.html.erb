@@ -31,7 +31,7 @@
                     <tbody>
                         <tr>
                             <td>Subtotal</td>
-                            <td class="text-right"></td>
+                            <td class="text-right"><%= number_to_currency(@current_cart.sub_total) %></td>
                         </tr>
                         <tr>
                             <td>Discount</td>
@@ -39,7 +39,7 @@
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td class="text-right"></td>
+                            <td class="text-right"><%= number_to_currency(@current_cart.sub_total) %></td>
                         </tr>
                     </tbody>
                 </table>
