@@ -16,7 +16,7 @@
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>  
+    </div>
     <div class="field">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
@@ -26,6 +26,58 @@
       <%= f.submit "Sign up" %>
     </div>
   <% end %>
-  <br> 
+  <br>
   <%= render "devise/shared/links" %>
 </div>
+
+<!-- Preloader-->
+<%= render 'shared/preloader' %>
+<!-- Preloader end-->
+
+<!-- Header-->
+<%= render 'shared/header' %>
+<!-- Header end-->
+
+<!-- Wrapper-->
+<div class="wrapper">
+    <section class="module-cover parallax fullscreen text-center" data-background="assets/images/module-5.jpg" data-overlay="0.65" data-gradient="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 m-auto">
+                    <div class="m-b-20">
+                        <h6>Create a new account</h6>
+                    </div>
+                    <div class="m-b-20">
+                        <form method="post">
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="email" placeholder="E-mail">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" placeholder="Pasword">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" placeholder="Confirm password">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-block btn-round btn-brand" type="submit">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="m-b-20">
+                        <p><small>By signing up, you agree to the <a href="#">terms of service</a></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <%= render 'shared/footer' %>
+    <!-- Footer end-->
+</div>
+<!-- Wrapper end-->
+
+<!-- To top button--><a class="scroll-top" href="#top"><i class="fas fa-angle-up"></i></a>
