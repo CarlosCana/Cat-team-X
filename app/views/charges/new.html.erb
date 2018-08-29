@@ -6,14 +6,14 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Amount: <%= number_to_currency(@current_cart.sub_total) %></span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Paiement des photos"
-          data-amount="500"
-          data-currency="eur"
+          data-amount="<%= number_to_currency(@current_cart.sub_total) %>"
+          data-currency="usd"
           data-locale="auto"></script>
 <% end %>
