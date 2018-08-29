@@ -67,7 +67,7 @@
                     </tbody>
                 </table>
                 <div class="text-right"><%= link_to "Proceed to checkout", new_order_path, class: "btn btn-block-mobile btn-black" %></div>
-                <!-- <div class="text-right"><%= link_to "Empty cart", cart_path(@current_cart), class: "btn btn-block-mobile btn-black", method: :delete, data: {confirm: "Are you sure?"} %></div> -->
+                <div class="text-right"><%= link_to "Empty cart", cart_path(@current_cart), class: "btn btn-block-mobile", method: :delete, data: {confirm: "Are you sure?"} %></div>
             </div>
         </div>
     </div>
