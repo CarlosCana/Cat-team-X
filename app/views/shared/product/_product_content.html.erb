@@ -10,7 +10,7 @@
                 <div class="shop-single-item">
                     <h2 class="shop-single-item-title"><%= @items.title %></h2>
                     <div class="shop-single-item-rating"><span class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span><a href="#">(2 customer reviews)</a></div>
-                    <h2 class="shop-single-item-price">$<%= @items.price %></h2>
+                    <h2 class="shop-single-item-price"><%= number_to_currency(@items.price) %></h2>
                     <div class="shop-single-item-description">
                         <p><%= @items.description %></p>
                     </div>

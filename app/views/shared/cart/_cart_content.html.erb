@@ -16,21 +16,24 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <% @cart.cart_items.each do |cart_item| %>
                                 <tr>
-                                    <td><a href="#"><img class="cart-thumbnail" src="assets/images/shop/1.jpg" alt=""></a></td>
+                                    <td><%= link_to image_tag(cart_item.item.image_url), "/item/"+cart_item.item.id.to_s, class: "cart-thumbnail" %></td>
                                     <td>
-                                        <h6 class="m-b-0"><a href="#">Classic Chair</a></h6>
+                                        <h6 class="m-b-0"><%= link_to cart_item.item.title, "/item/"+cart_item.item.id.to_s %></h6>
                                         <p><small>Color: black | Size: 36.5</small></p>
                                     </td>
-                                    <td>$30.00
-                                    </td>
+                                    <td><%= number_to_currency(cart_item.item.price) %></td>
                                     <td>
-                                        <input class="form-control" type="number" step="1" min="1" value="1">
+                                        <input class="form-control" type="number" step="1" min="1" value="<%= cart_item.quantity %>">
                                     </td>
-                                    <td>$30.00
+                                    <td><%= number_to_currency(cart_item.total_price) %></td>
+                                    <td class="cart-remove"><%= link_to cart_item_path(cart_item), method: :delete do %>
+                                      <i class="ti-close"></i>
+                                      <% end %>
                                     </td>
-                                    <td class="cart-remove"><a href="#"><i class="ti-close"></i></a></td>
                                 </tr>
+                                <% end %>
                             </tbody>
                         </table>
                     </div>
@@ -51,15 +54,15 @@
                     <tbody>
                         <tr>
                             <td>Subtotal</td>
-                            <td class="text-right">$21.00</td>
+                            <td class="text-right"><%= number_to_currency(@cart.sub_total) %></td>
                         </tr>
                         <tr>
                             <td>Discount</td>
-                            <td class="text-right">$1.00</td>
+                            <td class="text-right">$0.00</td>
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td class="text-right">$20.00</td>
+                            <td class="text-right"><%= number_to_currency(@cart.sub_total) %></td>
                         </tr>
                     </tbody>
                 </table>
