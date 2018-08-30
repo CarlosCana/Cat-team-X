@@ -1,0 +1,14 @@
+Model#new_record_notification
+
+Thanks for your order
+
+
+
+  def create
+    @user = user
+      
+    if @user.save
+      ModelMailer.new_record_notification(@user).deliver
+      redirect_to @user
+    end
+  end

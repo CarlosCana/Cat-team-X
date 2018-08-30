@@ -73,5 +73,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'faker'
 gem 'stripe'
+gem 'mailgun-ruby', '~>1.1.6'
 
 
