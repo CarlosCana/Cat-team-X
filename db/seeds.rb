@@ -27,4 +27,4 @@ item = Item.create([
   {title: 'Chairman Meow', description: Faker::Cat.breed, price: 30, image_url:'cat-17.jpg'},
   {title: 'Catpernicus', description: Faker::Cat.breed, price: 5, image_url:'cat-18.jpg'},
   {title: 'Thunder Paws', description: Faker::Cat.breed, price: 20, image_url:'cat-19.jpg'},
-  {title: 'The Boss', description: Faker::Cat.breed, price: 100, image_url:'cat-20.jpg'}])
+  {title: 'The Boss', description: Faker::Cat.breed, price: 50, image_url:'cat-20.jpg'}])
