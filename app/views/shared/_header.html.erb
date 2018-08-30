@@ -12,8 +12,8 @@
                                 <!-- Column 1-->
                                 <li class="menu-item-has-children mega-menu-col"><a href="#">Multi Page</a>
                                     <ul class="sub-menu">
-                                        <li><a href="index-5.html">Vimeo Video</a></li>
-                                        <li><a href="index-4.html">Youtube Video</a></li>
+                                        <li><a href="https://vimeo.com/54785974">Vimeo Video</a></li>
+                                        <li><a href="https://youtu.be/6kzrFoXNYVg">Youtube Video</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -53,26 +53,41 @@
         <div class="extra-nav">
             <ul>
               <% if user_signed_in? %>
-                <li id="special-nav">
-                  Connected as <%= current_user.username %>
-                </li>
-                <li id="special-nav">
-                  <%= link_to "Edit Account", edit_user_registration_path %>
-                </li>
-                <li id="special-nav">
-                  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-                </li>
-                <li>
-                  <a class="top-bar-cart" href="/carts/:id"><span class="menu-item-span"><i class="ti-shopping-cart"></i><span><%= @current_cart.cart_items.count %></span></span></a>
-                </li>
-              <% else %>
-                <li id="special-nav">
-                  <%= link_to "Sign In", new_user_session_path %>
-                </li>
-                <li id="special-nav">
-                  <%= link_to "Sign Up", new_user_registration_path %>
-                </li>
-              <% end %>
+              <!-- Dropdown menu for user  logged in-->
+            <div class="container-fluid">
+
+                  <div class="inner-nav">
+                      <ul>
+                          <!-- Username dropdown -->
+                          <li class="menu-item-has-children menu-item-has-mega-menu"><a href="#"><span class="menu-item-span"><%= current_user.username %></span></a>
+                            <!-- Shopping cart -->
+                            <li>
+                              <a class="top-bar-cart" href="/carts/:id"><span class="menu-item-span"><i class="fas fa-shopping-cart"></i></i><span><%= @current_cart.cart_items.count %></span></span></a>
+                            </li>
+                                  <ul class="sub-menu mega-menu-row" >
+                                      <!-- Column 1-->
+                                          <ul class="sub-menu">
+                                              <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+                                              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                                              <li><%= link_to "Shopping cart" %></li>
+                                          </ul>
+                                  </ul>
+                              </div>
+                          </li>
+                      </ul>
+                    </div>
+              </div>
+            </div>
+
+
+          <% else %>
+            <li id="special-nav">
+              <%= link_to "Sign In", new_user_session_path %>
+            </li>
+            <li id="special-nav">
+              <%= link_to "Sign Up", new_user_registration_path %>
+            </li>
+          <% end %>
             </ul>
         </div>
     </div>
