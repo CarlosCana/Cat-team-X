@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :description
       # Precision for decimals
-      t.decimal :price, precision: 3, scale: 2
+      t.decimal :price
       t.string :image_url
 
       t.timestamps
