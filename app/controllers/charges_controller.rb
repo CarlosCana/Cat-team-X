@@ -1,3 +1,5 @@
+require 'mail'
+
 class ChargesController < ApplicationController
 
     def new
@@ -25,7 +27,7 @@ class ChargesController < ApplicationController
 
       redirect_to root_path
       flash[:success] = 'Thank you for your order'
-
+      ModelMailer.new_record_notification(customer.email).deliver
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path

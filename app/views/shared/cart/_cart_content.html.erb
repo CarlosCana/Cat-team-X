@@ -25,7 +25,11 @@
                                     </td>
                                     <td><%= number_to_currency(cart_item.item.price) %></td>
                                     <td>
-                                        <input class="form-control" type="number" step="1" min="1" value="<%= cart_item.quantity %>">
+                                      <div class="cart-qua  ntity">
+                                         <%= link_to "+", cart_item_add_path(:id => cart_item), class: "btn btn-primary btn-sm", method: :post %>
+                                          <input class="form control" type="text" value="<%= cart_item.quantity %>" />
+                                         <%= link_to "-", cart_item_reduce_path(:id => cart_item), class: "btn btn-primary btn-sm", method: :post %>
+                                      </div>
                                     </td>
                                     <td><%= number_to_currency(cart_item.total_price) %></td>
                                     <td class="cart-remove"><%= link_to cart_item_path(cart_item), method: :delete do %>
